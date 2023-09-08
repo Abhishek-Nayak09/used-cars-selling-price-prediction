@@ -2106,7 +2106,7 @@ def main():
         new_encoded_array = np.array([encoded_name, reshaped_array[0, 1], reshaped_array[0, 2],
                                encoded_fuel, encoded_seller_type, encoded_transmission,
                                encoded_owner, reshaped_array[0, 7], reshaped_array[0, 8], reshaped_array[0, 9]])
-        
+        new_encoded_array = new_encoded_array.astype("object")
         new_data = np.reshape(new_encoded_array, (1, -1))   
         output1 = model1.predict(new_data)[0]
         output2 = model2.predict(new_data)[0]
