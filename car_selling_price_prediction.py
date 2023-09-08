@@ -2106,10 +2106,10 @@ def main():
         new_encoded_array = np.array([encoded_name[0], reshaped_array[0, 1], reshaped_array[0, 2],encoded_fuel[0], encoded_seller_type[0], encoded_transmission[0], encoded_owner[0], reshaped_array[0, 7], reshaped_array[0, 8], reshaped_array[0, 9]])
         
         new_data = np.reshape(new_encoded_array, (1, -1))   
-        output1 = model1.predict(new_data)[0]
+        #output1 = model1.predict(new_data)[0]
         output2 = model2.predict(new_data)[0]
         output3 = model3.predict(new_data)[0]
-        output = (output1 + output2 + output3)/3
+        output = (output2 + output3)/3
         add_percent = (output1 + output2 + output3)/3 * 0.05
         rounded_value = round_to_thousands(output)
         round_add_percent = round_to_thousands(add_percent)
